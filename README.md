@@ -68,7 +68,7 @@ Foi desenvolvido um assistente virtual baseado em chatbot que permite aos servid
    pip install -r requirements.txt
    ```
 
-4. **Crie o arquivo `.env` **:
+4. **Crie o arquivo `.env`**:
    - Armazene suas credenciais `OPENAI_API_KEY` e `SECRET_CMP` 
 
 5. **Execute a Aplicação:**
