@@ -38,10 +38,7 @@ load_dotenv()
 
 # Variáveis de ambiente
 openai_api_key = os.getenv("OPENAI_API_KEY")
-secret = os.getenv("SECRET")
-# conn = http.client.HTTPSConnection("google.serper.dev")
-SERPER_API = os.getenv("SERPER_API")
-GEMINI_KEY = os.getenv("GEMINI_KEY")
+secret = os.getenv("SECRET_CMP")
 
 
 

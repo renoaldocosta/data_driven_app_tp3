@@ -68,12 +68,15 @@ Foi desenvolvido um assistente virtual baseado em chatbot que permite aos servid
    pip install -r requirements.txt
    ```
 
-4. **Execute a Aplicação:**
+4. **Crie o arquivo `.env` **:
+   - Armazene suas credenciais `OPENAI_API_KEY` e `SECRET_CMP` 
+
+5. **Execute a Aplicação:**
    ```bash
    streamlit run ./app.py
    ```
 
-5. **Acesse o Assistente Virtual:**
+6. **Acesse o Assistente Virtual:**
    - Abra o navegador e vá para [http://localhost:8501](http://localhost:8501) para interagir com o assistente.
 
 ## **Reflexão sobre a Eficiência do Assistente Virtual**
