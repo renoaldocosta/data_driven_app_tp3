@@ -29,20 +29,20 @@ from langchain_openai.chat_models import ChatOpenAI as OpenAIChatOpenAI
 # LangChain Google
 from langchain_google_genai import GoogleGenerativeAI
 
+# Own modules
 from utils import consultar_atualizacao_atos_legais_infralegais, consultar_atualizacao_projetos_atos_legais_infralegais
 
 
 # Carregar variáveis de ambiente
 load_dotenv()
 
+# Variáveis de ambiente
 openai_api_key = os.getenv("OPENAI_API_KEY")
 secret = os.getenv("SECRET")
 # conn = http.client.HTTPSConnection("google.serper.dev")
 SERPER_API = os.getenv("SERPER_API")
 GEMINI_KEY = os.getenv("GEMINI_KEY")
 
-# Inicializar a API do Wikipedia
-# wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
 
 
 # Função que consulta a API do ControlGov para obter informações sobre CPF ou CNPJ
@@ -213,9 +213,20 @@ def consultar_atualizacao_projetos_atos_legais_infralegais_cmp(query=None) -> st
 
 # Função que gera a resposta do agente de atendimento
 def load_agent(text):
+        """
+    Configura e retorna o executor do agente baseado no texto de entrada.
+    
+    Args:
+        text (str): O prompt de entrada para o agente.
+    
+    Returns:
+        AgentExecutor: O executor configurado para o agente.
+    """
+    
     # Consultar CPF ou CNPJ
     text = "Me responda apenas:\n" + text
     
+    # Define ferraenta de consulta de atualização de atos legais e infralegais    
     atualizacao_projetos_atos_legais_infralegais = Tool(
         name="Consultar Atualização de Projetos de Atos Legais e Infralegais",
         func=consultar_atualizacao_projetos_atos_legais_infralegais_cmp,
@@ -228,6 +239,7 @@ def load_agent(text):
         ),
     )
     
+    # Define ferraenta de consulta de atualização de atos legais e infralegais
     atualizacao_atos_legais_infralegais = Tool(
         name="Consultar Atualização de Atos Legais e Infralegais",
         func=consultar_atualizacao_atos_legais_infralegais_cmp,
@@ -240,6 +252,7 @@ def load_agent(text):
         ),
     )
 
+    # Definir a ferramenta de consulta de CPF ou CNPJ
     consultar_cpf_cnpj_tool = Tool(
         name="Consultar CPF ou CNPJ",
         func=consultar_cpf_cnpj,
@@ -250,7 +263,7 @@ def load_agent(text):
         ),
     )
 
-    # Definir as ferramentas
+    # Define ferramenta de consulta de subelementos
     subelementos_tool = Tool(
         name="Consultar Subelemento Individualmente",
         func=consultar_subelementos,
@@ -260,7 +273,7 @@ def load_agent(text):
         ),
     )
 
-    # Definir as ferramentas
+    # Define ferramenta de consulta de elementos
     elementos_tool = Tool(
         name="Consultar Elemento Individualmente",
         func=consultar_elementos,
@@ -270,6 +283,7 @@ def load_agent(text):
         ),
     )
 
+    # Define ferramenta de consulta de empenho por elemento
     empenho_pessoa_fisica_juridica = Tool(
         name="Consultar Empenho a Pessoa Física ou Jurídica",
         func=consultar_PessoaFisica_PessoaJuridica,
@@ -279,6 +293,7 @@ def load_agent(text):
         ),
     )
 
+    # Define ferramenta de consulta de empenho por elemento
     empenhos_por_elemento_tool = Tool(
         name="Consultar o total empenhado para todos os Elementos de uma Vez",
         func=listar_empenhos_por_elemento,
@@ -299,6 +314,7 @@ def load_agent(text):
         # categoria_tool  # Adiciona a nova ferramenta aqui
     ]
 
+    # Prefixo e sufixo do prompt
     prefix = """# Assistente de Finanças Governamentais da Câmara Municipal de Pinhão/SE
     Você é um assistente direto e especializado em finanças governamentais.
 
@@ -345,6 +361,8 @@ def load_agent(text):
     Se você já tiver todas as informações necessárias para responder à pergunta do usuário, forneça a resposta final:
     Pensamento: Já tenho as informações necessárias para responder ao usuário. 
     """
+    
+    # Sufixo do prompt com histórico do chat e scratchpad do agente
     suffix = """
 
     Histórico do Chat:
@@ -362,7 +380,7 @@ def load_agent(text):
     Responda apenas ao que foi perguntado. Evite demais informações.
     """
 
-    # Atualizar o prefixo do prompt para incluir a nova ferramenta
+    # Criar o prompt do agente com as variáveis de entrada e ferramentas
     prompt = ConversationalAgent.create_prompt(
         tools,
         prefix=prefix,
@@ -373,14 +391,16 @@ def load_agent(text):
     # Configurar a memória
     msg = StreamlitChatMessageHistory()
 
+    # Se a memória não existir, crie uma nova
     if "memory" not in st.session_state:
         st.session_state.memory = ConversationBufferMemory(
             messages=msg, memory_key="chat_history", return_messages=True
         )
 
+    # Carregar a memória
     memory = st.session_state.memory
 
-    # Configurar o LLM
+    # Configurar o LLM Chain 
     llm_chain = LLMChain(
         llm=CommunityChatOpenAI(temperature=0.5, model_name="gpt-4o-mini"),
         # llm=GoogleGenerativeAI(model="gemini-1.5-flash", api_key=GEMINI_KEY),
@@ -388,7 +408,7 @@ def load_agent(text):
         verbose=True,
     )
 
-    # Configurar o agente
+    # Configurar o agente conversacional com o LLM Chain, a memória e as ferramentas
     agent = ConversationalAgent(
         llm_chain=llm_chain,
         memory=memory,
@@ -397,6 +417,7 @@ def load_agent(text):
         tools=tools,
     )
 
+    # Configurar o executor do agente com o agente, ferramentas e memória
     agent_executor = AgentExecutor.from_agent_and_tools(
         agent=agent,
         tools=tools,

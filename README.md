@@ -50,8 +50,8 @@ Foi desenvolvido um assistente virtual baseado em chatbot que permite aos servid
 
 1. **Clone o Repositório Interno:**
    ```bash
-   git clone https://git.camarapinhao.se.gov.br/seu-usuario/assistente-virtual-camara-pinhao.git
-   cd assistente-virtual-camara-pinhao
+   git clone https://github.com/renoaldocosta/data_driven_app_tp3.git
+   cd data_driven_app_tp3
    ```
 
 2. **Crie e Ative um Ambiente Virtual (Opcional, mas Recomendado):**

@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+# Função para consultar a atualização de atos legais e infralegais
 def consultar_atualizacao_atos_legais_infralegais():
     """
     Extrai dados da tabela da página especificada, processa-os e gera um relatório.
@@ -156,6 +157,8 @@ def consultar_atualizacao_atos_legais_infralegais():
     except Exception as ex:
         return f"Ocorreu um erro inesperado: {ex}"
 
+
+# Função para consultar a atualização de projetos de leis e atos infralegais
 def consultar_atualizacao_projetos_atos_legais_infralegais():
     """
     Extrai dados da tabela da página especificada, processa-os e gera um relatório.
