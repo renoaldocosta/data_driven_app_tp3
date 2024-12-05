@@ -1,0 +1,15 @@
+.env
+venv/
+READMEd.md
+.notebook
+.mypy_cache
+app copy.py - com memoria backup.PY
+app copy.py - Funcionando mas não limpo
+app funcionando.py
+main.py
+notebook.ipynb
+projetos_leis_atos_infralegais.ipynb
+READMEd.md
+test.py
+relatorio_tipo_aprovado.csv
+__pycache__/

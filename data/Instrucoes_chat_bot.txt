@@ -1,0 +1,77 @@
+## **Manual de Instruções do Assistente Virtual da Câmara Municipal de Pinhão/SE**
+
+### **Bem-vindo!**
+
+Bem-vindo(a)! Este assistente virtual está aqui para ajudar você a consultar informações financeiras e de transparência de maneira rápida e eficiente.
+
+### **O que você pode fazer?**
+
+O assistente pode ajudar você a obter informações sobre:
+
+- **Elementos e Subelementos de Despesa:** Detalhes sobre onde os recursos estão sendo alocados.
+- **Valores Empenhados a Pessoas Físicas e Jurídicas:** Informações sobre os compromissos financeiros com indivíduos e empresas.
+- **CPF ou CNPJ dos Credores:** Dados cadastrais dos credores da Câmara Municipal.
+- **Atualização de Atos Legais e Infralegais:** Informações sobre as atualizações dos atos legais e infralegais.
+- **Atualização de Projetos de Atos Legais e Infralegais:** Relatórios sobre o status e atualizações dos projetos relacionados aos atos legais e infralegais.
+
+### **Ferramentas Disponíveis**
+
+O assistente possui acesso às seguintes ferramentas especializadas:
+
+1. **Consultar Empenho a Pessoa Física ou Jurídica**
+   - **Descrição:** Obtenha informações sobre os valores empenhados para Pessoas Físicas (PF) ou Pessoas Jurídicas (PJ).
+   - **Exemplos de Perguntas:**
+     - "Qual o total empenhado para o credor Renoaldo Costa?"
+     - "Qual o total empenhado para o credor Câmara Municipal de Pinhão?"
+
+2. **Consultar CPF ou CNPJ**
+   - **Descrição:** Obtenha informações sobre o CPF ou CNPJ dos credores.
+   - **Exemplos de Perguntas:**
+     - "Qual o CPF de Renoaldo?"
+     - "Qual o CNPJ da Duplichaves?"
+
+3. **Consultar Subelemento Individualmente**
+   - **Descrição:** Obtenha informações sobre os valores empenhados por subelementos de despesa.
+   - **Exemplos de Perguntas:**
+     - "Qual o total empenhado para o subelemento fretes?"
+
+4. **Consultar Elemento Individualmente**
+   - **Descrição:** Obtenha informações sobre os valores empenhados por elementos de despesa.
+   - **Exemplos de Perguntas:**
+     - "Qual o total empenhado para o elemento diárias de pessoal civil?"
+
+5. **Consultar Atualização de Atos Legais e Infralegais**
+   - **Descrição:** Obtenha informações sobre a atualização dos atos legais e infralegais da Câmara Municipal de Pinhão/SE.
+   - **Exemplos de Perguntas:**
+     - "Quais são as atualizações recentes dos atos legais?"
+     - "Atualizações dos atos infralegais da última semana."
+
+6. **Consultar Atualização de Projetos de Atos Legais e Infralegais**
+   - **Descrição:** Obtenha informações sobre a atualização dos projetos de atos legais e infralegais da Câmara Municipal de Pinhão/SE.
+   - **Exemplos de Perguntas:**
+     - "Quais são os projetos de atos legais atualizados recentemente?"
+     - "Atualizações dos projetos de atos infralegais em andamento."
+
+### **Dicas para uma Melhor Experiência**
+
+- **Seja Específico:** Quanto mais detalhes você fornecer, mais precisa será a resposta.
+- **Use Termos Claros:** Evite abreviações ou termos técnicos que possam não ser compreendidos.
+- **Evite Informações Desnecessárias:** O assistente responderá apenas ao que for perguntado para manter as respostas concisas.
+
+### **Exemplos de Perguntas Eficazes**
+
+- "Qual o CPF do credor *Renoaldo*?"
+- "Qual o total empenhado para o subelemento *fretes*?"
+- "Qual o CNPJ da Câmara Municipal de Pinhão?"
+- "Quais são as atualizações recentes dos atos legais?"
+- "Quais são os projetos de atos legais atualizados recentemente?"
+
+### **Limitações**
+
+- **Atualização de Dados:** As informações disponíveis estão atualizadas até a data de corte de conhecimento do assistente.
+- **Respostas Limitadas:** O assistente responderá apenas ao que for perguntado, evitando fornecer informações adicionais que não foram solicitadas.
+
+### **Suporte**
+
+Se você encontrar dificuldades ou tiver dúvidas adicionais, entre em contato com o suporte da Câmara Municipal de Pinhão/SE.
+
