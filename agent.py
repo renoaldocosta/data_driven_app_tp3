@@ -213,7 +213,7 @@ def consultar_atualizacao_projetos_atos_legais_infralegais_cmp(query=None) -> st
 
 # Função que gera a resposta do agente de atendimento
 def load_agent(text):
-        """
+    """
     Configura e retorna o executor do agente baseado no texto de entrada.
     
     Args:
